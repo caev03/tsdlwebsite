@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "undergrad_theses",
+  "info": {
+    "singularName": "undergrad-thesis",
+    "pluralName": "undergrad-theses",
+    "displayName": "UndergradThesis",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Semester": {
+      "type": "enumeration",
+      "enum": [
+        "s202510",
+        "s202520",
+        "s202610",
+        "s202620"
+      ]
+    },
+    "Professor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "undergrad_thesis"
+    }
+  }
+}
